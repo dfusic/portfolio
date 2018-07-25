@@ -1,0 +1,73 @@
+.ContactBtn{
+  background-color: white;
+  position: fixed;
+  right: 15%;
+  bottom: 0;
+  width: 200px;
+  height: 200px;
+  box-sizing: border-box;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 200ms ease-in-out;
+  transform: translatey(90%);
+  &__title{
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    max-width: 80%;
+  }
+  a{
+    margin-left: auto;
+    color: black;
+    text-decoration: none;
+    font-family: 'Ubuntu', sans-serif;
+    text-transform: uppercase;
+    font-size: .9em;
+    position: relative;
+    display: inline-block;
+    opacity: .8;
+    transition: opacity 400ms ease-in-out;
+    &::before{
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 0%;
+      height: 2px;
+      background-color: black;
+    }
+    &::after{
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      right: 0;
+      width: 0%;
+      height: 2px;
+      background-color: black;
+      opacity: 0;
+      transition: opacity 10ms ease-in-out 200ms, width 200ms ease-in-out;
+    }
+    &:hover, &:focus{
+      opacity: 1;
+      &::before{
+        transition: width 200ms ease-in-out;
+        width: 100%;
+      }
+      &::after{
+        opacity: 1;
+        width: 100%;
+      }
+    }
+  }
+  &:hover{
+    transform: translateY(0);
+  }
+}
+
+@media screen and (max-width: 842px){
+  .ContactBtn{
+    right: 20px;
+  }
+}

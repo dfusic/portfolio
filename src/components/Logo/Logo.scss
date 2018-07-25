@@ -1,0 +1,17 @@
+.Logo{
+  margin: 0;
+  font-size: 2em;
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+  color: white;
+  position: absolute;
+  padding: 20px;
+  top: 0;
+  left: 0;
+  span{
+    font-weight: 300;
+    font-family: 'Open Sans', sans-serif;
+    position: relative;
+    top: 7px;
+  }
+}

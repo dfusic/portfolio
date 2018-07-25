@@ -1,7 +1,17 @@
 @import './assets/fonts.scss';
 
 html, body{
-  font-family: $josefinSans;
   padding: 0;
   margin: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@media screen and (max-width: 768px){
+ html, body{
+  width: auto;
+  height: auto;
+  min-height: 100vh;
+ }
 }

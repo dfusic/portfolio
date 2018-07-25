@@ -1,0 +1,108 @@
+.Intro{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  &__title{
+    font-family: 'Ubuntu', sans-serif;
+    color: white;
+    font-size: 10em;
+    position: relative;
+    
+    &-shifted{
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 300;
+      position: relative;
+      top: 100px;
+      right: 50px;
+    }
+  }
+  &__desc{
+    position: relative;
+    bottom: 50px;
+    &__title{
+      color: white;
+      text-transform: uppercase;
+      font-family: 'Open Sans', sans-serif;
+    }
+    &__para{
+      color: white;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 300;
+      max-width: 40%;
+      line-height: 1.7;
+    }
+    a{
+      color: white;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 700;
+      position: relative;
+      opacity: .7;
+      transition: opacity 400ms ease-in-out;
+      &::before{
+        content: '';
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 0%;
+        height: 2px;
+        background-color: white;
+      }
+      &::after{
+        content: '';
+        position: absolute;
+        bottom: -1px;
+        right: 0;
+        width: 0%;
+        height: 2px;
+        background-color: white;
+        opacity: 0;
+        transition: opacity 10ms ease-in-out 200ms, width 200ms ease-in-out;
+      }
+      &:hover, &:focus{
+        opacity: 1;
+        &::before{
+          transition: width 200ms ease-in-out;
+          width: 100%;
+        }
+        &::after{
+          opacity: 1;
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 842px){
+  .Intro{
+    left: 0;
+    &__title{
+      font-size: 5em;
+      &-shifted{
+        position: relative;
+        top: 0;
+        left: 0;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 842px){
+  .Intro__desc{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    &__title{
+      margin: 50px 0 0 0;
+    }
+    &__para{
+      margin: 10px 0 10px 0;
+      max-width: 60%;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+.Homepage{
+  height: 90%;
+  position: relative;
+  top: 5%;
+  .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+  }
+  &__title{
+    color: white;
+    font-size: 3em;
+    margin: 0;
+    padding: 0;
+    font-family: 'Ubuntu', sans-serif;
+  }
+}
