@@ -1,0 +1,65 @@
+.Menu {
+  height: 100%;
+  &_close{
+    position: absolute;
+    transform: rotate(90deg);
+    top: 10px;
+    font-weight: 400;
+    right: 0;
+    &::before{
+      display: none;
+    }
+    &::after{
+      display: none;
+    }
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    position: relative;
+    a {
+      color: white;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 5em;
+      text-decoration: none;
+      font-weight: 300;
+      margin: 30px 0;
+      position: relative;
+      &::before {
+        content: '';
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+        width: 0%;
+        height: 2px;
+        background-color: white;
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: -1px;
+        right: 0;
+        width: 0%;
+        height: 2px;
+        background-color: white;
+        opacity: 0;
+        transition: opacity 10ms ease-in-out 200ms, width 200ms ease-in-out;
+      }
+      &:hover,
+      &:focus {
+        opacity: 1;
+        &::before {
+          transition: width 200ms ease-in-out;
+          width: 100%;
+        }
+        &::after {
+          opacity: 1;
+          width: 100%;
+        }
+      }
+    }
+  }
+}

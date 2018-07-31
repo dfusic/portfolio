@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Route} from 'react-router-dom';
 import Homepage from './Homepage';
+import Menu from './Menu';
 import background from '../assets/background.jpg';
 import './App.scss';
 
@@ -17,6 +18,11 @@ class App extends Component {
         exact
         path="/"
         component={Homepage}
+        />
+        <Route 
+        exact
+        path="/menu"
+        component={Menu}
         />
       </div>
     );
